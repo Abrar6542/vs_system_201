@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Voter Home page</title>
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+<body>
+     <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+    
+
+    <div >
+    <div>
+        <h3>Candidate information </h3>
+        
+    <table>
+       <thead>
+        <tr>
+            <th>Your Voter ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Mobile Number</th>
+            
+            <th>Your Candidate ID</th>
+            <th>Candidate Email</th>
+            <th>Constituency ID</th>
+            <th>Constituency Name</th>
+            <th>Party ID</th>
+            <th>Party Name</th>
+           
+            
+            
+        </tr>
+       </thead>
+       <tbody>
+        {% for r in res %}
+        <tr>
+          <td>{{ r.v_id }}</td>
+          <td>{{ r.f_name }} {{ r.l_name}}</td>
+          <td>{{r.age}}</td>
+          <td>{{ r.city }}</td>
+          <td>{{ r.mob }}</td>
+           <td>{{ r.c_id }}</td>
+          <td>{{ r.email }}</td>
+          <td>{{ r.ct_id }}</td>
+          <td>{{ r.ct_name }}</td>
+          <td>{{ r.p_id }}</td>
+          <td>{{ r.p_name }}</td>
+          
+          
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+
+    </div>
+<div class="cont">
+  <div class="dv">
+    <h3>Your Application status</h3>
+    {%  if stat==0  %}
+   <h4 style="background-color: rgb(186, 186, 15);">Pending</h4>
+    {%  elif stat==1  %}
+   <h4 style="background-color: rgb(10, 173, 10);">Approved</h4>
+   {%  elif stat==2  %}
+   <h4 style="background-color: rgb(220, 34, 34);">Rejected</h4>
+   {%  else  %}
+   <h4 style="background-color: rgb(71, 71, 206);">Unknown</h4>
+   {%  endif  %}
+  </div>
+<div class="dv">
+<h3>Your Results</h3>
+</div>
+</div>
+   
+    
+    
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>

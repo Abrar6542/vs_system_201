@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Candidate List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+<body>
+    <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+  <div class="dv">
+        <h3>All Candidates List</h3>
+        
+    <table>
+       <thead>
+        <tr>
+            <th>Candidate ID</th>
+            <th>Name</th>
+            <th>Voter ID</th>
+            <th>Email</th>
+            <th>Constituency ID</th>
+            <th>Constituency Name</th>
+            <th>Party ID</th>
+            <th>Party Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+            
+            
+        </tr>
+       </thead>
+       <tbody>
+        {% for r in res %}
+        <tr>
+          <td>{{ r.c_id }}</td>
+          <td>{{ r.f_name }} {{ r.l_name}}</td>
+          <td>{{ r.v_id }}</td>
+          <td>{{ r.email }}</td>
+          <td>{{ r.ct_id }}</td>
+          <td>{{ r.ct_name }}</td>
+          <td>{{ r.p_id }}</td>
+          <td>{{ r.p_name }}</td>
+              {%  if r.status==0 %}
+                  <td style="background-color: rgb(230, 230, 31);">Pending</td></td>
+                  <form action="/c_Approve_candid" method="post">
+                  <td><button type="submit" name="c_id" value="{{ r.c_id }}">Accept Application</button></td></form>
+              {%  elif r.status==1 %}
+                  <td style="background-color: rgb(8, 178, 8);">Approved (Active)</td>
+                  <form action="c_Reject_candid" method="post">
+                  <td><button type="submit" name="c_id" value="{{ r.c_id }}">Reject Application</button></td></form>
+               {%  elif r.status==2 %}
+                  <td style="background-color: rgb(234, 72, 72);">Rejected</td>
+                 
+              {%  else %}
+                  <td>Unknown</td>
+              {%  endif %}
+          
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+    </div>
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer> 
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Admin Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+
+<!------------------------------------------------------------------------------------------------>
+<body>
+  <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header> 
+   
+   <h4>{{a}}</h4>
+  <div>
+
+    <div><table>
+    <form action="/acc_alogins" method="post">
+        <h2>Login Here</h2>
+          
+          <tr> <td><label for="a_id">Admin ID number</label></td><br>
+           <td><input type="number" id="v_id" name="a_id" required ></td><br></tr>
+
+        <tr><td><label for="email">Email</label></td><br>
+           <td><input type="email" id="email" name="email" required ></td><br></tr>
+
+          <tr> <td><label for="pass">password</label></td><br>
+           <td><input type="password" id="pass" name="password" required></td><br></tr>
+
+       <tr><td colspan="2"><input type="submit" value="Submit" ></td></tr> <br>
+       </form>  </table>
+   
+    </div>
+</div>
+<footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>

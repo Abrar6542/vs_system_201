@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Candidate ID get</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+
+<!------------------------------------------------------------------------------------------------>
+<body>
+    <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+    <h3>Enter the following credentials</h3>
+   
+   
+    <div ><table>
+    <form action="/c_cID" method="post">
+        <h3>{{a}}</h3>
+          
+          <tr> <td><label for="v_id">Your Voter ID</label></td><br>
+           <td><input type="number" id="v_id" name="v_id" required ></td><br></tr>
+
+        <tr><td><label for="email">Email</label></td><br>
+           <td><input type="email" id="email" name="email" required ></td><br></tr>
+
+          <tr> <td><label for="pass">password</label></td><br>
+           <td><input type="password" id="pass" name="password" required></td><br></tr>
+
+       <tr>    <td colspan="2"><input type="submit" value="Submit"></td><br></tr> 
+       </form>  </table>
+   
+       
+    </div>
+
+    
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>

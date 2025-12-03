@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Constituency List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+<body>
+    <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+ <h2>Constituency details </h2>
+  <div>
+    <h3>{{a}}</h3>
+    <table>
+<form action="/c_constituency_add" method="post">
+       
+          
+          <tr> <td><label for="a_id">Enter Constituency name</label></td><br>
+           <td><input type="text" id="a_id" name="ct_name" required ></td><br></tr>
+
+
+       <tr><td colspan="2"><input type="submit" value="Submit" ></td></tr> <br>
+       </form>  </table>
+  </div>
+  <div class="dv">
+        <h3>Constituency List</h3>
+        
+    <table>
+       <thead>
+        <tr>
+            <th>Constituency ID</th>
+            <th>Constituency Name</th>
+            <th>Actions</th>
+            
+        </tr>
+       </thead>
+       <tbody>
+        {% for r in res %}
+        <tr>
+          <td>{{ r.ct_id }}</td>
+          <td>{{ r.ct_name }}</td>
+          <form action="/c_constituency_delete" method="post">
+          <td><button type="submit" name="ct_id" value="{{r.ct_id}}">Delete</button></form>
+          </td>
+         
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+    </div>
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer> 
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>AAB VOTING SOLUTIONS</title>
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+   
+</head>
+<body>
+    <header>
+    <h1>Welcome to the Voting System page</h1>
+  </header>
+    <h2>Welcome Admin</h2>
+    <div class="cont">
+    <div class="dv">
+        <h3>Your profile information (admin)</h3>
+    <table>
+       <thead>
+        <tr>
+            <th>Your Admin ID</th>
+            <th>Name</th>
+            <th>Date of birth</th>
+            <th>Age</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            
+        </tr>
+       </thead>
+       <tbody>
+        {% for r in res %}
+        <tr>
+          <td>{{ r.a_id }}</td>
+          <td>{{ r.f_name }} {{ r.l_name}}</td>
+          <td>{{r.dob}}</td>
+          <td>{{r.age}}</td>
+          <td>{{ r.mob }}</td>
+          <td>{{ r.email }}</td>
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+    </div>
+
+    <div class="dv" style=" overflow-y: auto;">
+        <h3>Voting Activity</h3>
+
+        <h4 style="background-color: rgb(165, 193, 165);">Admins section</h4>
+      <ul>
+    <li>
+      <a href="/ret_admin_list">View All Admins</a>
+    </li>
+      </ul>
+      <h4 style="background-color: rgb(165, 193, 165);">Voters section</h4>
+      <ul>
+    
+      
+     <li>
+      <a href="/ret_voter_list">View All Voters</a>
+    </li>
+      </ul>
+      </ul>
+       <h4 style="background-color: rgb(165, 193, 165);">Manage elections </h4>
+      <ul>
+   <li>
+      <a href="/c_party_acc">Add/View party</a>
+    </li>
+    <li>
+      <a href="/c_constituency_acc">Add/View Constituency</a>
+    </li>
+    <li>
+      <a href="/c_All_candid">Candidates Management</a>
+    </li>
+    <li>
+      <a href="/get_poll_candid">Approved Candidates List</a>
+    </li>
+      </ul>
+    <h4 style="background-color: rgb(165, 193, 165);">Announcement section</h4>
+      <ul>
+    <li>
+      <a href="/a_anc_add_form">Announcments</a>
+    </li>
+      </ul>
+
+   
+    </div>
+    </div>
+
+
+    <!-------------------------------------------------------------->
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>

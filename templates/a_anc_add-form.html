@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Announcments</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+
+<!------------------------------------------------------------------------------------------------>
+<body>
+  <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header> 
+   
+   <h4>{{a}}</h4>
+  <div>
+
+    <div><table>
+    <form action="/a_anc_add" method="post">
+        <h2>Add Announcement Here</h2>
+          
+          <tr> <td><label for="a_anc">Enter Message</label></td><br>
+           <td><textarea name="info" placeholder="Write message" required></textarea></tr>
+
+        
+
+       <tr><td colspan="2"><input type="submit" value="Submit" ></td></tr> <br>
+       </form>  </table>
+   
+    </div>
+</div>
+<footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>

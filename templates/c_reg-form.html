@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Candidate Registration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+
+<!------------------------------------------------------------------------------------------------>
+<body>
+  <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header> 
+   
+   <h4>{{a}}</h4>
+   <h2>Candidate Registration</h2>
+  <div class="vrf">
+ 
+    <table>
+    <form action="/c_registration" method="post">
+       
+          
+          <tr> <td><label for="v_id">Enter your Voter ID number</label></td><br>
+           <td><input type="number" id="v_id" name="v_id" required ></td><br></tr>
+           
+           <tr><td><label for="p_id">Select political party</label></td><br>
+           <td>
+            <select id="p_id" name="p_id" class="custom-select">
+              <option value="">Select</option>
+              {% for r in p_res%}
+              <option value="{{r.p_id}}">{{r.p_id}} - {{r.p_name}}</option>
+              {% endfor %}
+            </select>
+           </td><br></tr>
+           <tr><td><label for="ct_id">Select Constituency</label></td><br>
+           <td>
+            <select id="ct_id" name="ct_id" class="custom-select">
+              <option value="">Select</option>
+              {% for r1 in ct_res%}
+              <option value="{{ r1.ct_id }}">{{r1.ct_id}} - {{r1.ct_name}}</option>
+              {% endfor %}
+            </select>
+           </td><br></tr>
+
+           <tr><td><label for="email">Email</label></td><br>
+           <td><input type="email" id="email" name="email" required ></td><br></tr>
+
+          <tr> <td><label for="pass"> Set password</label></td><br>
+           <td><input type="password" id="pass" name="password" required></td><br></tr>
+
+       <tr><td colspan="2"><input type="submit" value="Submit" ></td></tr> <br>
+       </form>  </table>
+   
+    </div>
+
+<footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>

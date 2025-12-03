@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Voter Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+
+<!------------------------------------------------------------------------------------------------>
+<body>
+    <header>
+    <h1>Welcome to the Voting System page</h1>
+  </header>
+    <h2>Login Here</h2>
+   <h4>{{a}}</h4>
+
+   
+    <div><table>
+    <form action="/acc_vlogins" method="post">
+        
+          
+          <tr> <td><label for="v_id">Voter ID number</label></td><br>
+           <td><input type="number" id="v_id" name="v_id" required ></td><br></tr>
+
+        <tr><td><label for="email">Email</label></td><br>
+           <td><input type="email" id="email" name="email" required ></td><br></tr>
+
+          <tr> <td><label for="pass">password</label></td><br>
+           <td><input type="password" id="pass" name="password" required></td><br></tr>
+
+       <tr>    <td colspan="2"><input type="submit" value="Submit"></td><br></tr> 
+       </form>  </table>
+   
+       
+    </div>
+
+    <div>
+     <p>To Know your voter ID <a href="/v_getVIDForm">Click Here</a></p>
+    </div>
+    
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>

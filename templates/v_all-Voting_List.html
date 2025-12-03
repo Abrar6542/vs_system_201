@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Voting Candidate List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+<body>
+    <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+  <h2>{{election_name}}</h2>
+  <div class="dv">
+        <h3>All Candidates List</h3>
+        
+    <table>
+       <thead>
+        <tr>
+            <th>Candidate ID</th>
+            <th>Name</th>
+            <th>Voter ID</th>
+            <th>Email</th>
+            <th>Constituency ID</th>
+            <th>Constituency Name</th>
+            <th>Party ID</th>
+            <th>Party Name</th>
+            <th><b>Your Vote</b></th>
+           
+            
+            
+        </tr>
+       </thead>
+       <tbody>
+        {% for r in res %}
+        <tr>
+          <td>{{ r.c_id }}</td>
+          <td>{{ r.f_name }} {{ r.l_name}}</td>
+          <td>{{ r.v_id }}</td>
+          <td>{{ r.email }}</td>
+          <td>{{ r.ct_id }}</td>
+          <td>{{ r.ct_name }}</td>
+          <td>{{ r.p_id }}</td>
+          <td>{{ r.p_name }}</td>
+          <td style="background-color: chartreuse;"><button>Vote</button></td>
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+    </div>
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer> 
+</body>
+</html>

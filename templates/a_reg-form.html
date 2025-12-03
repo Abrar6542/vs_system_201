@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Admin Registration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+
+<!------------------------------------------------------------------------------------------------>
+<body>
+     <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+   <h2>Admin registration form</h2>
+  <div class="vrf">
+   
+    <table>
+    <form action="/a_registration" method="post">
+        
+          <tr> <td><label for="fname">First name</label></td><br>
+         <td><input type="text" id="fname" name="fname" required></td><br><tr>
+
+          <tr> <td><label for="lname">Last name</label></td><br>
+           <td><input type="text" id="lname" name="lname" required></td><br></tr>
+
+           <tr> <td><label for="dob">Date of Birth</label></td><br>
+           <td><input type="date" id="dob" name="dob" required disabled></td><br></tr>
+
+          <tr> <td><label for="mob">Mobile number</label></td><br>
+           <td><input type="number" id="mob" name="mob" required></td><br></tr>
+
+        <tr><td><label for="email">Email</label></td><br>
+           <td><input type="email" id="email" name="email" required disabled></td><br></tr>
+
+          <tr> <td><label for="pass">set password</label></td><br>
+           <td><input type="password" id="pass" name="password" required disabled></td><br></tr>
+
+       <tr>    <td colspan="2"><input type="submit" value="Submit" disabled></td><br></tr> 
+       </form>  </table></div>
+   <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+    
+</body>
+</html>

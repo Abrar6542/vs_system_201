@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Voter ID get</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+
+<!------------------------------------------------------------------------------------------------>
+<body>
+    <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+    <h2>Know your Voter ID</h2>
+   
+   <div>
+        <h3>Your Voter ID information</h3>
+    <table>
+       <thead>
+        <tr>
+            
+            <th>Name</th>
+            <th>Voter ID</th>
+            
+            
+        </tr>
+       </thead>
+       <tbody>
+        {% for r in res %}
+        <tr>
+         
+          <td>{{ r.f_name }} {{ r.l_name}}</td>
+          <td><b>{{ r.v_id }}</b></td>
+         
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+    </div>
+    <p>Back to<a href="/v_LoginForm"> Login</a></p>
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>

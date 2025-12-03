@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Party List</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+
+</head>
+<body>
+    <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+ <h2>Political Party details </h2>
+  <div>
+    <h3>{{a}}</h3>
+    <table>
+<form action="/c_party_add" method="post">
+       
+          
+          <tr> <td><label for="a_id">Enter Party name</label></td><br>
+           <td><input type="text" id="a_id" name="p_name" required ></td><br></tr>
+
+
+       <tr><td colspan="2"><input type="submit" value="Submit" ></td></tr> <br>
+       </form>  </table>
+  </div>
+  <div class="dv">
+        <h3>party List</h3>
+        
+    <table>
+       <thead>
+        <tr>
+            <th>Party ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+            
+        </tr>
+       </thead>
+       <tbody>
+        {% for r in res %}
+        <tr>
+          <td>{{ r.p_id }}</td>
+          <td>{{ r.p_name }}</td>
+          <form action="/c_party_delete" method="post">
+          <td><button type="submit" name="p_id" value="{{r.p_id}}">Delete</button></form>
+          </td>
+         
+        </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+    </div>
+    <footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer> 
+</body>
+</html>

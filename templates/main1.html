@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Voting</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" >
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='voting-box.png') }}">
+</head>
+<body>
+  <header>
+    <h1>AAB VOTING SOLUTIONS</h1>
+  </header>
+ 
+  
+  <div class="cont">
+<div class="dv">
+  <p class="pv">Voters</p>
+    <ul>
+    
+    <li>
+      <a href="/v_LoginForm">Login</a>
+    </li>
+    <li>
+      <a href="/ret_vRegForm">Registration</a>
+    </li>
+  </ul>
+  
+</div>
+<div class="dv">
+  <ul>
+    <p class="pv">Candidates</p>
+    <li>
+      <a href="/c_LoginForm">Login</a>
+    </li>
+    <li>
+      <a href="/c_regist_form">Registration</a>
+    </li>
+  </ul>
+</div>
+<div class="dv">
+  <ul>
+    <p class="pv">Admins (Departmental)</p>
+    <li>
+      <a href="/a_LoginForm">Login</a>
+    </li>
+    <li>
+      <a href="/ret_aRegForm">Registration</a>
+    </li>
+  </ul>
+</div>
+</div>
+<footer>
+  <p>Designed and developed by : Abrar Baig</p>
+</footer>
+</body>
+</html>
